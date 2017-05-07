@@ -29,7 +29,7 @@ module.exports = (app) => {
 
   app.post('/login', loginValidation, passport.authenticate('local.login', {
       successRedirect: '/home', // if user successfully signs up via passport
-      failureRedirect: '/login',
+      failureRedirect: '/login',  // intention: to authenticate w/ Passport. Before authentication, you validate users info. GOAL is t
       failureFlash : true
   }));
 
@@ -83,5 +83,6 @@ function loginValidation(req, res, next){ // these are express-validator functio
     res.redirect('/login'); 
   }else {
     return next(); // if no errors, will execute |next| callback
-  }
+  }                // next is a callback. special callback that takes you to the NEXT middleware. up to 20 middlewares
+   
 }

@@ -49,6 +49,6 @@ app.listen(3000, function(){
   console.log('App running on port 3000');
 });
 
-
+// server.js is ENTRANCE to application
 
 // need to make sure you are getting userid to save in database and stuff
